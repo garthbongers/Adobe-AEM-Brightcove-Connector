@@ -32,11 +32,14 @@
 
 //setVideoTrackingEvents();
 
-function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
-// use like
-r(function(){
-    createPlayers();
-});
+(function() {
+	function r(f){/in/.test(document.readyState)?setTimeout(function() { r(f) },9):f()}
+	// use like
+	r(function(){
+    	createPlayers();
+	});
+})();
+
 function createPlayers() {
     var all = document.getElementsByClassName("brightcove-container");
     for (var i = 0, max = all.length; i < max; i++) {
